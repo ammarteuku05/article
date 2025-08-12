@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "eedd671b-25b7-474f-89a3-99ac5f81d734",
+		"name": "article",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31505108"
+	},
+	"item": [
+		{
+			"name": "create-author",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"ahmet t kuru\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3010/v1/authors/create"
+			},
+			"response": []
+		},
+		{
+			"name": "create-article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author_id\":\"910ed1eb-ae2c-45b7-96e9-0e00552f7477\",\n    \"title\":\"test title 1\",\n    \"body\":\"test bodyyyyy 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/v1/articles/create"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/v1/articles/articles?author_name=ahmet t kuru&page=1&per_page=2&sort=ASC",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/v1/articles/articles?author_name=ahmet t kuru&page=1&per_page=2&sort=ASC",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"articles",
+						"articles"
+					],
+					"query": [
+						{
+							"key": "author_name",
+							"value": "ahmet t kuru"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "2"
+						},
+						{
+							"key": "sort",
+							"value": "ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/v1/authors/get-all",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/v1/authors/get-all"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/v1/articles/update/:article_id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author_id\":\"910ed1eb-ae2c-45b7-96e9-0e00552f7477\",\n    \"title\":\"test title 4444\",\n    \"body\":\"test bodyyyyy 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/articles/update/:article_id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"articles",
+						"update",
+						":article_id"
+					],
+					"variable": [
+						{
+							"key": "article_id",
+							"value": "a3ccc459-fa47-4482-9ff6-b47fe1ea2259"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

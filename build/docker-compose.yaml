@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  article-api:
+    build:
+      context: .         # Location of Dockerfile
+      dockerfile: Dockerfile
+    image: article-api:latest
+    container_name: article-api
+    env_file:
+      - ../.env
+    ports:
+      - "3010:3000"
+    restart: always
+    entrypoint: sh -c "go run cmd/main.go"
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASS=root
+      - DB_NAME=article
+      - DB_PORT=5432
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    container_name: go-app-db
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: article
+    ports:
+      - "5433:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  db-data:

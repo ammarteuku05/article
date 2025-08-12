@@ -1,0 +1,4 @@
+development:
+  dialect: postgres
+  datasource: host=127.0.0.1 dbname=articles user=root password=root sslmode=disable
+  dir: schema-migration
