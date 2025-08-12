@@ -48,7 +48,7 @@ type (
 		// - database
 		DbUser                  string `envconfig:"DB_USER" required:"true" default:"root"`
 		DbPass                  string `envconfig:"DB_PASS" required:"true" default:"root"`
-		DbName                  string `envconfig:"DB_NAME" required:"true" default:"payment"`
+		DbName                  string `envconfig:"DB_NAME" required:"true" default:"article"`
 		DbHost                  string `envconfig:"DB_HOST" required:"true" default:"localhost"`
 		DbPort                  int    `envconfig:"DB_PORT" required:"true" default:"5432"`
 		DbMaxOpenConnection     int    `envconfig:"DB_MAX_OPEN_CONNECTION" required:"true" default:"32"`
